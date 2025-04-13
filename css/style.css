@@ -47,15 +47,16 @@ body {
 }
 
 .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-.logo a:hover {
-    color: var(--secondary-color);
+.logo img {
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -326,6 +327,151 @@ body {
     color: var(--secondary-color);
 }
 
+/* 解决方案样式 */
+.solutions {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.solutions h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--primary-color);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.solution-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.solution-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover img {
+    transform: scale(1.05);
+}
+
+.solution-card h3 {
+    padding: 20px;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.solution-card p {
+    padding: 0 20px 20px;
+    color: var(--text-color);
+}
+
+/* 客户案例样式 */
+.cases {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.cases h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--primary-color);
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.case-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-card:hover img {
+    transform: scale(1.05);
+}
+
+.case-card h3 {
+    padding: 20px;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.case-card p {
+    padding: 0 20px 20px;
+    color: var(--text-color);
+}
+
+/* 关于我们样式 */
+.about {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--primary-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
 /* 页脚样式 */
 .footer {
     background-color: var(--primary-color);
@@ -375,6 +521,20 @@ body {
     color: var(--secondary-color);
 }
 
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
@@ -412,12 +572,22 @@ body {
     }
 
     .advantages-grid,
-    .products-grid {
+    .products-grid,
+    .solutions-grid,
+    .cases-grid {
         grid-template-columns: 1fr;
     }
 
     .product-card {
         padding: 30px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        order: -1;
     }
 }
 
@@ -437,7 +607,9 @@ body {
 .hero .subtitle,
 .hero .description,
 .advantage-card,
-.product-card {
+.product-card,
+.solution-card,
+.case-card {
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
